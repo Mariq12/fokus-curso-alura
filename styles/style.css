@@ -1,0 +1,273 @@
+:root {
+    --color-primary: #123456;
+    --color-secondary: #FFF;
+    --toggle: #dad8d8;
+    --fundo-card-timer: rgba(20, 68, 128, 0.30); 
+    --lils: #B872FF;
+    --toogle-swich: #fff;
+    --toggle-hover: linear-gradient(to bottom, #fff 0%, #b5affd 100%);
+    --linear-botes: linear-gradient(180deg, #B872FF 0%, #144480 100%);
+    --footer: #010B15;
+    --fotter-text: rgba(182, 182, 182, 0.8);
+}
+
+[data-contexto="enfoque"] {
+    --main-bg-color: linear-gradient(180deg, #c58bff 0%, #8B1FF8 20%, #041832 48.44%, #01080E 100%);
+}
+
+[data-contexto="descanso-corto"] {
+    --main-bg-color: linear-gradient(180deg, #ef65df 0%, #082954 48.44%, #01080E 100%);
+}
+
+[data-contexto="descanso-largo"] {
+    --main-bg-color: linear-gradient(180deg, #90bef7 0%, #041832 48.44%, #01080E 100%);
+}
+
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+html {
+    background: var(--main-bg-color);
+    min-height: 100vh;
+    font-size: 10px;
+}
+
+body {
+    min-height: 100vh;
+    background: url("/images/pattern.png");
+    background-size: cover; /* ajusta el tamaño de la imagen al tamaño de la caja */
+    background-repeat: no-repeat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Unbounded', cursive;
+}
+
+.app__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem 0rem; /* Ajusta el padding según sea necesario */
+}
+
+.app__logo-image {
+    width: 100px; /* Ajusta el tamaño del logo según tus necesidades */
+    height: auto; /* Para mantener la proporción */
+}
+
+.app__title {
+    line-height: 130%;
+    font-size: 3rem;
+    font-style: normal;
+    color: var(--color-secondary);
+    font-weight: 200;
+    text-align: center; /* Centra el texto */
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+.app__title-strong {
+    font-weight: 600;
+}
+
+.app__section-card-container {
+    display: flex;
+    justify-content:space-between;
+}
+
+.app__image-figure {
+    margin: 2rem;
+    max-width: 90%; /* Ajusta el ancho máximo para que la imagen sea responsive */
+    padding: 2.4rem;
+}
+
+.app__image {
+    width: 35rem; /* La imagen ocupará el ancho máximo disponible */
+    height: auto; /* Mantendrá la proporción original de la imagen */
+    display: block; /* Elimina el espacio adicional debajo de la imagen */
+}
+
+.app__card {
+    border-radius: 3.2rem;
+    border: 0.2rem solid var(--linear-botes);
+    background: var(--fundo-card-timer);
+    padding: 2.4rem;
+    margin: 2rem 0 0 0;
+    width: 57rem;
+    max-width: 90%;
+    height: 36.5rem;
+    margin-right: 4rem;
+}
+
+.app__card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+}
+
+.app__card-button {
+    font-family: Montserrat;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    background: none;
+    padding: 0.8rem;
+    color: var(--color-secondary);
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.app__card-button.active {
+    border-radius: 0.8rem;
+    background: var(--linear-botes);
+    font-weight: 600;
+}
+
+.app__card-button:hover {
+    background: var(--dark-blue);
+    border-radius: 10px;
+}
+
+.app__card-timer {
+    color: var(--color-secondary);
+    text-align: center;
+    font-family: Unbounded;
+    font-size: 10rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 2.3rem;
+    text-align: center;
+}
+
+.app__card-list-label {
+    color: var(--color-secondary);
+    font-family: Montserrat;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.app__card-primary-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app__card-primary-button {
+    padding: 0.8rem;
+    width: 14rem;
+    color: var(--color-secondary);
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 3.2rem;
+    background: var(--linear-botes);
+    margin-top: 3.2rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.app__footer {
+    display: flex;
+    width: 100%;
+    padding: 2rem 6rem;
+    justify-content: center;
+    align-items: center;
+    background: var(--footer);
+    margin-top: auto;
+}
+
+.app__footer-text {
+    color: var(--fotter-text);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+/* toggle */
+.toggle {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.toggle-switch {
+    display: inline-block;
+    background: var(--toggle);
+    border-radius: 1.6rem;
+    width: 5.8rem;
+    height: 3.2rem;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+}
+
+.toggle-switch:before, .toggle-switch:after {
+    content: "";
+}
+
+.toggle-switch:before {
+    display: block;
+    background: var(--toogle-swich);
+    border-radius: 50%;
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    top: 0.4rem;
+    left: 0.4rem;
+    transition: left 0.25s;
+}
+
+.toggle:hover .toggle-switch:before {
+    background: var(--toggle-hover);
+}
+
+.toggle-checkbox:checked + .toggle-switch {
+    background: var(--lils);
+}
+
+.toggle-checkbox:checked + .toggle-switch:before {
+    left: 3rem;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+/* fim - toggle */
+
+/* Para Tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .app__section-banner-container {
+        width: 48rem;
+    }
+}
+
+/* Para Celulares */
+@media (max-width: 767px) {
+    .app__section-banner-container {
+        width: 32rem;
+    }
+
+    .app__title {
+        font-size: 2.6rem;
+    }
+
+    .app__card-timer {
+        font-size: 6rem;
+    }
+}
