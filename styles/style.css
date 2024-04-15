@@ -45,6 +45,12 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Unbounded', cursive;
 }
 
+.app {
+    flex: 1; /* Hace que el contenido principal ocupe todo el espacio restante */
+    display: flex;
+    flex-direction: column;
+}
+
 .app__header {
     display: flex;
     justify-content: space-between;
@@ -124,15 +130,11 @@ h1, h2, h3, h4, h5, h6 {
     outline: inherit;
 }
 
+.app__card-list-icon-container.active,
 .app__card-button.active {
     border-radius: 0.8rem;
     background: var(--linear-botes);
     font-weight: 600;
-}
-
-.app__card-button:hover {
-    background: var(--dark-blue);
-    border-radius: 10px;
 }
 
 .app__card-timer {
@@ -147,14 +149,74 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.toggle {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.toggle-switch {
+    display: inline-block;
+    background: var(--toggle);
+    border-radius: 1.6rem;
+    width: 7.5rem;
+    height: 3.2rem;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+}
+
+.toggle-switch:before, .toggle-switch:after {
+    content: "";
+}
+
+.toggle-switch:before {
+    display: block;
+    background: var(--toogle-swich);
+    border-radius: 50%;
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    top: 0.4rem;
+    left: 0.4rem;
+    transition: left 0.25s;
+}
+
+.toggle:hover .toggle-switch:before {
+    background: var(--toggle-hover);
+}
+
+.toggle-checkbox:checked + .toggle-switch {
+    background: var(--lils);
+}
+
+.toggle-checkbox:checked + .toggle-switch:before {
+    left: 4rem;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+/* fim - toggle */
+
+/* *Icono de Musica */
+#musica {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .app__card-list-label {
     color: var(--color-secondary);
     font-family: Montserrat;
     font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
+    margin-right: 10px;
 }
 
+/* *Boton comenzar */
 .app__card-primary-button-wrapper {
     display: flex;
     align-items: center;
@@ -197,58 +259,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     line-height: 150%;
 }
-
 /* toggle */
-.toggle {
-    cursor: pointer;
-    display: inline-block;
-}
 
-.toggle-switch {
-    display: inline-block;
-    background: var(--toggle);
-    border-radius: 1.6rem;
-    width: 5.8rem;
-    height: 3.2rem;
-    position: relative;
-    vertical-align: middle;
-    transition: background 0.25s;
-}
-
-.toggle-switch:before, .toggle-switch:after {
-    content: "";
-}
-
-.toggle-switch:before {
-    display: block;
-    background: var(--toogle-swich);
-    border-radius: 50%;
-    width: 2.4rem;
-    height: 2.4rem;
-    position: absolute;
-    top: 0.4rem;
-    left: 0.4rem;
-    transition: left 0.25s;
-}
-
-.toggle:hover .toggle-switch:before {
-    background: var(--toggle-hover);
-}
-
-.toggle-checkbox:checked + .toggle-switch {
-    background: var(--lils);
-}
-
-.toggle-checkbox:checked + .toggle-switch:before {
-    left: 3rem;
-}
-
-.toggle-checkbox {
-    position: absolute;
-    visibility: hidden;
-}
-
-/* fim - toggle */
 
 /* Para Tablets */
 @media (max-width: 1024px) and (min-width: 768px) {
