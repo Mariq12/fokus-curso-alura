@@ -287,6 +287,15 @@ h6 {
         margin-top: 20px;
     }
 
+    .app__image {
+        width: 20rem;
+        /* La imagen ocupará el ancho máximo disponible */
+        height: auto;
+        /* Mantendrá la proporción original de la imagen */
+        display: block;
+        /* Elimina el espacio adicional debajo de la imagen */
+    }
+
     .app__card {
         height: 33rem;
         width: 48rem;
