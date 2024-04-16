@@ -2,7 +2,7 @@
     --color-primary: #123456;
     --color-secondary: #FFF;
     --toggle: #dad8d8;
-    --fundo-card-timer: rgba(20, 68, 128, 0.30); 
+    --fundo-card-timer: rgba(20, 68, 128, 0.30);
     --lils: #B872FF;
     --toogle-swich: #fff;
     --toggle-hover: linear-gradient(to bottom, #fff 0%, #b5affd 100%);
@@ -23,44 +23,48 @@
     --main-bg-color: linear-gradient(180deg, #90bef7 0%, #041832 48.44%, #01080E 100%);
 }
 
-* {
-    box-sizing: border-box;
-    max-width: 100%;
-}
-
 html {
     background: var(--main-bg-color);
-    min-height: 100vh;
     font-size: 10px;
+    min-height: 100%;
+    position: relative;
+    /* Añadir posicionamiento relativo para el body */
 }
 
 body {
-    min-height: 100vh;
+    margin: 0;
     background: url("/images/pattern.png");
-    background-size: cover; /* ajusta el tamaño de la imagen al tamaño de la caja */
     background-repeat: no-repeat;
-}
-
-h1, h2, h3, h4, h5, h6 {
+    background-size: cover;
     font-family: 'Unbounded', cursive;
-}
-
-.app {
-    flex: 1; /* Hace que el contenido principal ocupe todo el espacio restante */
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    /* Establecer altura mínima del cuerpo */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Unbounded', cursive;
 }
 
 .app__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 4rem 0rem; /* Ajusta el padding según sea necesario */
+    padding: 2rem 4rem 0rem;
+    /* Ajusta el padding según sea necesario */
 }
 
 .app__logo-image {
-    width: 100px; /* Ajusta el tamaño del logo según tus necesidades */
-    height: auto; /* Para mantener la proporción */
+    width: 100px;
+    /* Ajusta el tamaño del logo según tus necesidades */
+    height: auto;
+    /* Para mantener la proporción */
 }
 
 .app__title {
@@ -69,8 +73,10 @@ h1, h2, h3, h4, h5, h6 {
     font-style: normal;
     color: var(--color-secondary);
     font-weight: 200;
-    text-align: center; /* Centra el texto */
-    margin: 0 auto; /* Centra horizontalmente */
+    text-align: center;
+    /* Centra el texto */
+    margin: 0 auto;
+    /* Centra horizontalmente */
 }
 
 .app__title-strong {
@@ -79,19 +85,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .app__section-card-container {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
 .app__image-figure {
     margin: 2rem;
-    max-width: 90%; /* Ajusta el ancho máximo para que la imagen sea responsive */
+    max-width: 90%;
+    /* Ajusta el ancho máximo para que la imagen sea responsive */
     padding: 2.4rem;
 }
 
 .app__image {
-    width: 35rem; /* La imagen ocupará el ancho máximo disponible */
-    height: auto; /* Mantendrá la proporción original de la imagen */
-    display: block; /* Elimina el espacio adicional debajo de la imagen */
+    width: 35rem;
+    /* La imagen ocupará el ancho máximo disponible */
+    height: auto;
+    /* Mantendrá la proporción original de la imagen */
+    display: block;
+    /* Elimina el espacio adicional debajo de la imagen */
 }
 
 .app__card {
@@ -149,6 +159,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+/* *Boton para seleccionar musica  */
 .toggle {
     cursor: pointer;
     display: inline-block;
@@ -165,7 +176,8 @@ h1, h2, h3, h4, h5, h6 {
     transition: background 0.25s;
 }
 
-.toggle-switch:before, .toggle-switch:after {
+.toggle-switch:before,
+.toggle-switch:after {
     content: "";
 }
 
@@ -185,11 +197,11 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--toggle-hover);
 }
 
-.toggle-checkbox:checked + .toggle-switch {
+.toggle-checkbox:checked+.toggle-switch {
     background: var(--lils);
 }
 
-.toggle-checkbox:checked + .toggle-switch:before {
+.toggle-checkbox:checked+.toggle-switch:before {
     left: 4rem;
 }
 
@@ -240,14 +252,21 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
 }
 
+/* Footer */
 .app__footer {
     display: flex;
-    width: 100%;
-    padding: 2rem 6rem;
     justify-content: center;
     align-items: center;
+    padding: 2rem 6rem;
     background: var(--footer);
+    color: var(--footer-text);
     margin-top: auto;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    /* Añadir box-sizing para incluir el padding en el ancho */
 }
 
 .app__footer-text {
@@ -257,29 +276,56 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.3rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%;
+    width: 100%;
+    /* Ocupar todo el ancho disponible */
 }
-/* toggle */
 
 
 /* Para Tablets */
 @media (max-width: 1024px) and (min-width: 768px) {
-    .app__section-banner-container {
+    .app__title {
+        margin-top: 20px;
+    }
+
+    .app__card {
+        height: 37rem;
         width: 48rem;
+    }
+
+    .app__card-timer {
+        font-size: 9rem;
+    }
+
+    .app__footer-text {
+        font-size: 1.1rem;
     }
 }
 
 /* Para Celulares */
 @media (max-width: 767px) {
-    .app__section-banner-container {
-        width: 32rem;
-    }
 
     .app__title {
-        font-size: 2.6rem;
+        margin: 20px;
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .app__image-figure {
+        display: none;
+    }
+
+    .app__card {
+        height: 30rem;
+        width: 43rem;
+        margin: auto;
     }
 
     .app__card-timer {
         font-size: 6rem;
+    }
+
+    .app__footer-text {
+        font-size: 1.1rem;
+        text-align: center;
     }
 }

@@ -12,7 +12,7 @@ const iconoIniciarPausar = document.querySelector(".app__card-primary-butto-icon
 const tiempoEnPantalla = document.querySelector('#timer');
 
 const musica = new Audio('./sounds/luna-rise-part-one.mp3');
-const audioPlay = new Audio('./soundss/play.wav');
+const audioPlay = new Audio('./sounds/play.wav');
 const audioPausa = new Audio('./sounds/pause.mp3');
 const audioTiempoFinalizado = new Audio('./sounds/beep.mp3');
 
