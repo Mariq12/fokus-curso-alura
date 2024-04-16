@@ -1,3 +1,4 @@
+// Seleccionar elementos del DOM
 const html = document.querySelector('html');
 const botonEnfoque = document.querySelector('.app__card-button--enfoque');
 const botonCorto = document.querySelector('.app__card-button--corto');
@@ -11,6 +12,7 @@ const textoIniciarPausar = document.querySelector('#start-pause span');
 const iconoIniciarPausar = document.querySelector(".app__card-primary-butto-icon");
 const tiempoEnPantalla = document.querySelector('#timer');
 
+// Definir objetos de audio
 const musica = new Audio('./sounds/luna-rise-part-one.mp3');
 const audioPlay = new Audio('./sounds/play.wav');
 const audioPausa = new Audio('./sounds/pause.mp3');
@@ -19,8 +21,10 @@ const audioTiempoFinalizado = new Audio('./sounds/beep.mp3');
 let tiempoTranscurridoEnSegundos = 1500;
 let idIntervalo = null;
 
+// Configuración inicial del objeto de música
 musica.loop = true;
 
+// Event listener para alternar la reproducción de música
 inputMusicaEnfoque.addEventListener('change', () => {
     if(musica.paused) {
         musica.play();
@@ -29,24 +33,27 @@ inputMusicaEnfoque.addEventListener('change', () => {
     }
 });
 
+// Event listener para el botón de enfoque
 botonEnfoque.addEventListener('click', () => {
     tiempoTranscurridoEnSegundos = 1500;
     cambiarContexto('enfoque');
+    // classList permite agregar y quitar clases
     botonEnfoque.classList.add('active');
 });
-
+// Event listener para el botón de descanso corto
 botonCorto.addEventListener('click', () => {
     tiempoTranscurridoEnSegundos = 300;
     cambiarContexto('descanso-corto');
     botonCorto.classList.add('active');
 });
-
+// Event listener para el botón de descanso largo
 botonLargo.addEventListener('click', () => {
     tiempoTranscurridoEnSegundos = 900;
     cambiarContexto('descanso-largo');
     botonLargo.classList.add('active');
 });
 
+// Función para cambiar el contexto de la aplicación
 function cambiarContexto(contexto) {
     mostrarTiempo();
     botones.forEach(function (botonContexto){
@@ -76,6 +83,7 @@ function cambiarContexto(contexto) {
     }
 }
 
+// Función para la cuenta regresiva
 const cuentaRegresiva = () => {
     if(tiempoTranscurridoEnSegundos <= 0){
         audioTiempoFinalizado.play();
@@ -87,6 +95,7 @@ const cuentaRegresiva = () => {
     mostrarTiempo();
 };
 
+// Event listener para iniciar o pausar el temporizador
 botonIniciarPausar.addEventListener('click', iniciarOpausar);
 
 function iniciarOpausar() {
@@ -101,6 +110,7 @@ function iniciarOpausar() {
     iconoIniciarPausar.setAttribute('src', `/images/pause.png`);
 }
 
+// Event listener para iniciar o pausar el temporizador
 function reiniciar() {
     clearInterval(idIntervalo); 
     textoIniciarPausar.textContent = "Comenzar";
@@ -108,11 +118,12 @@ function reiniciar() {
     idIntervalo = null;
 }
 
+// Función para mostrar el tiempo en pantalla
 function mostrarTiempo() {
     const tiempo = new Date(tiempoTranscurridoEnSegundos * 1000);
     const tiempoFormateado = tiempo.toLocaleTimeString('es-ES', {minute: '2-digit', second: '2-digit'});
     tiempoEnPantalla.innerHTML = `${tiempoFormateado}`;
 }
-
+// Mostrar el tiempo inicial al cargar la página
 mostrarTiempo();
 
