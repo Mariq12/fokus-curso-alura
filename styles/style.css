@@ -112,7 +112,7 @@ h6 {
     margin: 2rem 0 0 0;
     width: 57rem;
     max-width: 90%;
-    height: 36.5rem;
+    height: 33rem;
     margin-right: 4rem;
 }
 
@@ -257,7 +257,7 @@ h6 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 6rem;
+    padding: 1rem 6rem;
     background: var(--footer);
     color: var(--footer-text);
     margin-top: auto;
@@ -273,11 +273,11 @@ h6 {
     color: var(--fotter-text);
     text-align: center;
     font-family: Montserrat;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
     width: 100%;
-    /* Ocupar todo el ancho disponible */
+    line-height: 140%;
 }
 
 
@@ -288,7 +288,7 @@ h6 {
     }
 
     .app__card {
-        height: 37rem;
+        height: 33rem;
         width: 48rem;
     }
 
